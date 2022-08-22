@@ -269,7 +269,6 @@ export default class LiveSocket {
       if(!latency){
         cb(data)
       } else {
-        console.log(`simulating ${latency}ms of latency from server to client`)
         setTimeout(() => cb(data), latency)
       }
     })
@@ -292,7 +291,6 @@ export default class LiveSocket {
       }
     }
 
-    console.log(`simulating ${latency}ms of latency from client to server`)
     let fakePush = {
       receives: [],
       receive(kind, cb){ this.receives.push([kind, cb]) }
